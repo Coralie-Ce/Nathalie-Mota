@@ -6,7 +6,7 @@
     <meta name="description" content="Site photographe freelance">
     <meta name="keywords" content="Photo event">
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 
     <?php wp_head(); ?>
 
