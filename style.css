@@ -10,12 +10,68 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: nathalie-mota
 */
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Light.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceMono';
+    src: url('assets/fonts/SpaceMono-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceMono';
+    src: url('assets/fonts/SpaceMono-Italic.ttf') format('ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SpaceMono';
+    src: url('assets/fonts/SpaceMono-BoldItalic.ttf') format('ttf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Ajuste la couleur si besoin */
+}
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700; /* Bold */
+    font-style: italic;
+}
+
+h2 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400; /* Regular */
+    font-style: italic;
+}
+
+h3 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
 
 /* Conteneur du menu */
 .main-nav {
     background-color: white; /* Fond blanc */
     padding: 20px;
     text-align: right; /* Alignement des liens */
+    flex-grow: 1; /* Permet au menu de prendre toute la place restante */
+    text-align: right; /* Alignement à droite */
+    padding-right : 80px;
 }
 
 /* Liste des éléments du menu */
@@ -25,7 +81,7 @@ Text Domain: nathalie-mota
     padding: 0;
     display: flex;
     justify-content: flex-end; /* Alignement à droite */
-    gap: 30px; /* Espacement entre les liens */
+    gap: 60px; /* Espacement entre les liens */
 }
 
 ul {
@@ -34,4 +90,39 @@ ul {
 .menu a {
     color: black;
     text-decoration: none;
+}
+
+/* Style global du header */
+.site-header {
+    background-color: white; /* Fond blanc */
+    padding: 20px 40px;
+}
+
+/* Container en flexbox */
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espace entre le logo et le menu */
+}
+
+/* Logo */
+.logo img {
+    height: 20px;
+}
+
+.main-nav, .footer-menu a {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Footer */ 
+
+.footer-menu{
+    display: flex;
+    justify-content: center;
 }

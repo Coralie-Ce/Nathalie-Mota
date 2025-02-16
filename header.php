@@ -22,14 +22,13 @@
             </a>
         </div>
 
-    <nav class="main-nav">
-    <?php
-    wp_nav_menu(['theme_location' => 'main-menu',
-    ]);
-    ?>
-
-    // Inclure fichier template formulaire contact 
-    </nav>
+        <nav class="main-nav">
+            <?php
+                wp_nav_menu(['theme_location' => 'main-menu',
+            ]);
+            ?>
+        </nav>
+    </div>
 
 </header>
 
