@@ -30,6 +30,13 @@
         </nav>
     </div>
 
+    <!-- Image du header sous la navigation -->
+    <div class="header-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/header.jpeg" alt="Header Image">
+        <div class="header-title"> PHOTOGRAPHE event
+        </div>
+    </div>
+
 </header>
 
 </body>
