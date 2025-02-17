@@ -4,7 +4,7 @@
 
 <!-- Modale -->
 
-<div id="maModal" class="modal">
+<div id="maModal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close">X</span>
         <!--insérer image contact-->
