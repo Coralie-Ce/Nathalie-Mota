@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Script chargé"); 
     
     const modal = document.getElementById("maModal");
-    const openModal = document.getElementById("open-modal"); // Sélectionne le lien Contact
+    const openModal = document.querySelector(".open-modal"); 
     const closeModal = document.querySelector(".close");
 
     if (openModal) {
         openModal.addEventListener("click", function () {
+            console.log("Le bouton 'CONTACT' a été cliqué !"); 
+
             modal.style.display = "flex";
         });
     }

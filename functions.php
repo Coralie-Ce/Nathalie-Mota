@@ -16,6 +16,7 @@ function register_footer_menu() {
 }
 add_action( 'after_setup_theme', 'register_footer_menu' );
 
+// Modale
 function nathaliemota_enqueue_scripts() {
     wp_enqueue_script('custom-scripts', get_template_directory_uri() . '/js/scripts.js', array(), null, true);
 }

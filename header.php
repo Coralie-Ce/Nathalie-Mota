@@ -31,14 +31,17 @@
     </div>
 
     <!-- Image du header sous la navigation -->
+    <?php if (is_front_page()) : ?>
+        <!-- Image du header, affichée uniquement sur la page d'accueil -->
     <div class="header-image">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/header.jpeg" alt="Header Image">
         <div class="header-title"> PHOTOGRAPHE EVENT
         </div>
     </div>
-
+    <?php endif; ?>
 </header>
 
+<?php wp_footer(); ?>
 </body>
 
 </html>

@@ -1,10 +1,10 @@
 <!-- Ouverture modale -->
 
-<button id="open-modal">CONTACT</button>
+<button class="open-modal">CONTACT</button>
 
 <!-- Modale -->
 
-<div id="maModal" class="modal" style="display: none;">
+<div id="maModal" class="modal">
     <div class="modal-content">
         <span class="close">X</span>
         <!--insérer image contact-->
