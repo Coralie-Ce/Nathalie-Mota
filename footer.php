@@ -7,7 +7,7 @@
         ]);
         ?>
     </nav>
-    <?php get_template_part('templates_part/modal-contact'); ?>
+    <?php get_template_part('template-parts/contact-modal'); ?>
 
 </footer>
 
