@@ -38,6 +38,13 @@ Text Domain: nathalie-mota
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
 p {
     font-family: 'Poppins', sans-serif;
     font-weight: 300; /* Light */
@@ -190,4 +197,39 @@ ul {
     top: 10px;
     right: 10px;
     cursor: pointer;
+}
+
+.wpcf7-form-control.wpcf7-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: lightgray;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+.wpcf7-form-control.wpcf7-text{
+    border-radius: 8px;
+    height: 30px;
+    border-color: #B8BBC2;
+}
+
+.wpcf7-form-control.wpcf7-textarea{
+   border-radius: 8px; 
+   border-color: #B8BBC2;
+}
+.wpcf7-form-control.wpcf7-submit{
+    font-family: 'Space Mono', monospace;
+    background-color: #D8D8D8;
+    font-weight: 400; /* Regular */
+    font-size: 12px;
+    border: none;
+    border-radius: 3px;
+    height: 60px;
+}
+.champ-formulaire label{
+    font-family: 'Poppins' !important;
+    font-weight: 500 !important;
+    font-style: normal;
 }
