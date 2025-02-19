@@ -164,6 +164,8 @@ ul {
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
+    border-top: black 1px solid;
+    padding-top: 20px;
 }
 
 /* Modale */ 
@@ -187,9 +189,21 @@ ul {
     position: fixed;
     padding: 20px;
     border-radius: 5px;
-    max-width: 80%;
+    max-width: 600px;
     width: auto;
     height: auto;
+}
+
+.img-formulaire {
+    max-width: 100%; 
+    height: auto;  
+    display: block;  
+    margin: 0 auto;  
+}
+
+.wpcf7{
+    justify-content: center;
+    display: flex;
 }
 
 .close {
@@ -213,11 +227,13 @@ ul {
     border-radius: 8px;
     height: 30px;
     border-color: #B8BBC2;
+    width: 340px !important;
 }
 
 .wpcf7-form-control.wpcf7-textarea{
    border-radius: 8px; 
    border-color: #B8BBC2;
+   width: 340px !important;
 }
 .wpcf7-form-control.wpcf7-submit{
     font-family: 'Space Mono', monospace;
@@ -228,8 +244,8 @@ ul {
     border-radius: 3px;
     height: 60px;
 }
-.champ-formulaire label{
+.champ-formulaire p {
     font-family: 'Poppins' !important;
     font-weight: 500 !important;
-    font-style: normal;
+    font-style:normal;
 }
