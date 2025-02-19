@@ -192,18 +192,29 @@ ul {
     max-width: 450px;
     width: auto;
     height: auto;
+    overflow: hidden;
+    padding-top: 70px;
+}
+button.open-modal{
+    display: none;
 }
 
 .img-formulaire {
-    max-width: 100%; 
-    height: auto;  
-    display: block;  
-    margin: 0 auto;  
+    width: 150%;
+    position: absolute;
+    height: auto;
+    left: 50%;
+    right: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    margin: 0 auto; 
 }
 
 .wpcf7{
     justify-content: center;
     display: flex;
+    padding-top: 50px;
 }
 
 .close {
@@ -245,9 +256,11 @@ ul {
     height: 60px;
 }
 .champ-formulaire p {
-    font-family: 'Poppins' !important;
-    font-weight: 500 !important;
-    font-style:normal;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.6;
+    color: black;
 }
 
 input, textarea {
