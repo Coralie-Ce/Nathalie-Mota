@@ -189,7 +189,7 @@ ul {
     position: fixed;
     padding: 20px;
     border-radius: 5px;
-    max-width: 600px;
+    max-width: 450px;
     width: auto;
     height: auto;
 }
@@ -248,4 +248,11 @@ ul {
     font-family: 'Poppins' !important;
     font-weight: 500 !important;
     font-style:normal;
+}
+
+input, textarea {
+    border: 1px solid #000; /* Bordure noire plus fine */
+    box-shadow: none;
+    background: white;
+    resize: none;
 }
