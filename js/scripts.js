@@ -27,3 +27,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Miniatures dynamiques 
+
+
+
+// Ouverture popup avec jQuery 
+
+jQuery(document).ready(function ($) {
+    $('#openContactModal').click(function () {
+        var refPhoto = $(this).data('reference');
+        $('#contactModal input[name="ref_photo"]').val(refPhoto);
+        $('#contactModal').fadeIn();
+    });
+
+    $('.modal-close').click(function () {
+        $('#contactModal').fadeOut();
+    });
+});
