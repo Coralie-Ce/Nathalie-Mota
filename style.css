@@ -293,8 +293,8 @@ input, textarea {
 .photo-info {
     flex: 1;
     max-width: 50%;
-    font-family: "Arial", sans-serif;
     padding-right: 20px;
+    border-bottom: 1px solid black
 }
 
 .photo-info h2 {
@@ -349,7 +349,12 @@ input, textarea {
 
 /* Bouton Contact */
 .contact-section {
-    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0 20px;
+    border-bottom: 1px solid black;
 }
 
 .contact-section p {
@@ -369,6 +374,9 @@ button#openContactModal {
     font-family: 'Space Mono', monospace;
     font-weight: 400; /* Regular */
     font-size: 12px;
+    width: 200px;
+    position: relative;
+    right: 110px;
 }
 
 button#openContactModal:hover {
@@ -397,7 +405,7 @@ button#openContactModal:hover {
 }
 
 .photo-navigation img {
-    width: 40px;
+    width: 20px;
     height: 40px;
     object-fit: contain;
 }
