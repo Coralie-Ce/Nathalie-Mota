@@ -17,7 +17,7 @@ get_header();
                 <p>RÉFÉRENCE : <?php echo esc_html(SCF::get('reference')); ?></p>
                 <p>CATÉGORIE : 
                     <?php 
-                    $terms = get_the_terms(get_the_ID(), 'categorie_photo');
+                    $terms = get_the_terms(get_the_ID(), 'categorie');
                     if ($terms && !is_wp_error($terms)) {
                         $categories = wp_list_pluck($terms, 'name');
                         echo esc_html(implode(', ', $categories));
@@ -26,7 +26,17 @@ get_header();
                     }
                     ?>
                 </p>
-                <p>FORMAT : <?php echo get_the_term_list(get_the_ID(), 'format', '', ', '); ?></p>
+                <p>FORMAT : 
+    <?php 
+    $terms = get_the_terms(get_the_ID(), 'format');
+    if ($terms && !is_wp_error($terms)) {
+        $formats = wp_list_pluck($terms, 'name');
+        echo esc_html(implode(', ', $formats));
+    } else {
+        echo 'Non spécifié';
+    }
+    ?>
+</p>
                 <p>TYPE : <?php echo esc_html(SCF::get('type')); ?></p>
                 <p>ANNÉE : <?php echo esc_html(SCF::get('annee') ?: 'Non spécifiée'); ?></p>
                 
