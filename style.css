@@ -436,7 +436,6 @@ button#openContactModal:hover {
     width: 80px;
     height: 50px;
     background-size: cover;
-    border: 1px solid #ccc;
     display: block;
 }
 

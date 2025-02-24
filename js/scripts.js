@@ -50,9 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Ouverture popup avec jQuery 
 
-
-
-
 jQuery(document).ready(function($) {
     // Récupère le bouton
     var button = document.getElementById("openContactModal");

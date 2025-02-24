@@ -26,19 +26,22 @@ get_header();
                     }
                     ?>
                 </p>
-                <p>FORMAT : 
-    <?php 
-    $terms = get_the_terms(get_the_ID(), 'format');
+                <p>FORMAT : <?php 
+                $terms = get_the_terms(get_the_ID(), 'format');
     if ($terms && !is_wp_error($terms)) {
         $formats = wp_list_pluck($terms, 'name');
         echo esc_html(implode(', ', $formats));
     } else {
         echo 'Non spécifié';
     }
-    ?>
-</p>
+                            ?>
+                </p>
                 <p>TYPE : <?php echo esc_html(SCF::get('type')); ?></p>
-                <p>ANNÉE : <?php echo esc_html(SCF::get('annee') ?: 'Non spécifiée'); ?></p>
+                <p>ANNÉE : <?php
+            $year = get_the_date('Y');
+            echo esc_html($year) . '</p>';
+            ?></p>
+                
                 
                 
             </div>
@@ -65,12 +68,12 @@ get_header();
     $first_post = get_posts(array(
         'numberposts' => 1,
         'order' => 'ASC',
-        'post_type' => 'photo' // Remplace 'photo' par le type de ton post si nécessaire
+        'post_type' => 'photo' 
     ));
     $last_post = get_posts(array(
         'numberposts' => 1,
         'order' => 'DESC',
-        'post_type' => 'photo' // Remplace 'photo' par le type de ton post si nécessaire
+        'post_type' => 'photo' 
     ));
 
     // Vérifier s'il y a un précédent, sinon boucler vers le dernier
