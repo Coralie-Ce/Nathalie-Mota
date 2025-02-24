@@ -69,6 +69,7 @@ h3 {
     font-family: 'Space Mono', monospace;
     font-weight: 400; /* Regular */
     font-style: normal;
+    text-transform: uppercase;
 }
 
 body{

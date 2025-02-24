@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
     }
-
     
     // Fermer la modale
     if (closeModal) {
@@ -51,17 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // Ouverture popup avec jQuery 
 
 jQuery(document).ready(function($) {
-    // Récupère le bouton
-    var button = document.getElementById("openContactModal");
-
-    // Ajoute l'événement de clic
-    button.addEventListener("click", function() {
-        var reference = this.getAttribute("data-reference");
+    // Sélectionne le bouton d'ouverture de la modale
+    $("#openContactModal").on("click", function() {
+        var reference = $(this).data("reference"); // Récupère la référence depuis data-reference
         console.log("Référence récupérée : " + reference);  // Vérifie si la référence est bien récupérée
 
-        // Si la référence est récupérée, insère-la dans le champ du formulaire avec jQuery
+        // Si la référence est récupérée, l'insérer dans le champ du formulaire
         if (reference) {
-            $("#photo-reference").val(reference);
+            $('input[name="réf-photo"]').val(reference);  // Assure-toi que le name du champ est correct
         }
 
         // Ouvrir la modale
@@ -73,5 +69,4 @@ jQuery(document).ready(function($) {
         $(".contact-modal").fadeOut();
     });
 });
-
 

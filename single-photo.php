@@ -106,7 +106,9 @@ get_header();
 
 </div>
 
-
+<div class="bloc-photos">
+    <h3>Vous aimerez aussi</h3>
+</div>
     <?php endwhile; endif; ?>
 </main>
 
