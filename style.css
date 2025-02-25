@@ -117,6 +117,31 @@ ul {
     text-decoration: none;
 }
 
+
+/* Masquer le menu mobile par défaut */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 100%; /* Caché hors écran */
+    width: 100vw;
+    height: 100vh;
+    background-color: #E00000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: left 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+/* Affichage du menu ouvert */
+.mobile-menu.open {
+    left: 0;
+}
+
+
+
 /* Style global du header */
 .site-header {
     background-color: white; /* Fond blanc */
@@ -165,6 +190,7 @@ ul {
 
 .footer-menu{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 20px;
     /*border-top: black 1px solid;
@@ -549,7 +575,7 @@ button#openContactModal:hover {
 }
 
 @media (max-width: 768px) {
-    .footer-menu {
+    #menu-footer-menu {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -558,4 +584,91 @@ button#openContactModal:hover {
     .footer-menu a {
         margin-bottom: 1vh; /* Espacement entre les liens */
     }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-menu.open ul{
+        gap: 70px;
+    }
+    .menu-burger {
+        width: 3vh;
+        height: 2vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1100;
+        padding: 2vh;
+    }
+    .menu-burger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile-menu.open + .footer-menu {
+        display: none !important;
+    }
+}
+
+
+
+/* Masquer le menu desktop sur mobile */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        display: none; /* Cache le menu classique */
+    }
+}
+    
+
+    
+
+/* Menu mobile (plein écran) */
+    .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #E00000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: left 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+    .mobile-menu a {
+    font-family: "Space Mono", monospace;
+    font-size: 44px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Affichage du menu ouvert */
+    .mobile-menu.open {
+    left: 0;
+}
+
+/* Animation du burger en X */
+    .menu-burger.open .line1 {
+    transform: translateY(8px) rotate(45deg);
+}
+    .menu-burger.open .line2 {
+    opacity: 0;
+}
+    .menu-burger.open .line3 {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.logo img {
+    height: 1vh;
 }

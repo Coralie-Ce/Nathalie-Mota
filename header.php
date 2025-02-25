@@ -8,6 +8,19 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+/*jQuery(document).ready(function($) {
+    $(".menu-burger").click(function() {
+        $(".mobile-menu").toggleClass("open");
+        $(this).toggleClass("open");
+    });
+
+    $(".mobile-menu a").click(function() {
+        $(".mobile-menu").removeClass("open");
+        $(".menu-burger").removeClass("open");
+    });
+});*/
+</script>
     <?php wp_head(); ?>
 
 </head>
@@ -28,6 +41,22 @@
             ]);
             ?>
         </nav>
+
+        <!-- Bouton menu mobile -->
+         <div class="menu-burger">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+        <div class="mobile-menu">
+        <?php
+            wp_nav_menu([
+            'theme_location' => 'main-menu',
+            'container' => false, // Empêche WP d’ajouter un div inutile
+        ]);
+        ?>
+        </div>
+
     </div>
 
     <!-- Image du header sous la navigation -->

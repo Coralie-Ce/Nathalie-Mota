@@ -102,3 +102,22 @@ jQuery(document).ready(function($) {
     });
 });
 
+// Menu burger 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector(".menu-burger");
+    const menu = document.querySelector(".mobile-menu"); // Assure-toi que c'est le bon sélecteur
+    const footer = document.querySelector(".footer-menu");
+
+    burger.addEventListener("click", function () {
+        menu.classList.toggle("open");
+        burger.classList.toggle("open");
+
+        // Si le menu est ouvert, on cache le footer, sinon on l'affiche
+        if (menu.classList.contains("open")) {
+            footer.style.display = "none";
+        } else {
+            footer.style.display = "flex"; // ou "block" selon ton layout
+        }
+    });
+});
