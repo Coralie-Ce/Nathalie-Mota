@@ -80,17 +80,17 @@ body{
 /* Menus */
 .main-nav {
     background-color: white; /* Fond blanc */
-    padding: 20px;
+    padding: 2vh 4vw; 
     text-align: right; /* Alignement des liens */
     flex-grow: 1; /* Permet au menu de prendre toute la place restante */
     text-align: right; /* Alignement à droite */
-    padding-right : 80px;
+    padding-right: 5vw;
 }
 
 .main-nav, .footer-menu a {
     font-family: 'Space Mono', monospace;
     font-weight: 400; /* Regular */
-    font-size: 16px;
+    font-size: 1.2vw;
     text-transform: uppercase;
     color: black;
     text-decoration: none;
@@ -103,7 +103,8 @@ body{
     padding: 0;
     display: flex;
     justify-content: flex-end; /* Alignement à droite */
-    gap: 60px; /* Espacement entre les liens */
+   /* gap: 60px; Espacement entre les liens */
+    gap: 4vw;
     position: relative; /* ou absolute */
     z-index: 1000;
 }
@@ -130,8 +131,8 @@ ul {
 
 /* Logo */
 .logo img {
-    height: 20px;
-    padding-left: 80px;
+    height: 3vh; /* Ajuster la taille du logo selon la hauteur de l'écran */
+    padding-left: 5vw;
 }
 
 /* Image header */ 
@@ -154,7 +155,7 @@ ul {
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-style: italic;
-    font-size: 96px;
+    font-size: 5vw;
     color: transparent; /* Texte transparent */
     -webkit-text-stroke: 2px white; /* Contour blanc */
     white-space: nowrap;
@@ -166,8 +167,14 @@ ul {
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
-    border-top: black 1px solid;
-    padding-top: 20px;
+    /*border-top: black 1px solid;
+    padding-top: 20px;*/
+    padding: 2vh 0; /* Espacement vertical dynamique */
+    border-top: 0.2vh solid black; /* Épaisseur du trait adaptée */
+}
+
+.footer-menu a {
+    font-size: 1.2vw; /* Taille de texte responsive */
 }
 
 /* Modale */ 
@@ -538,5 +545,17 @@ button#openContactModal:hover {
 
     .photo-navigation {
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-menu {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-menu a {
+        margin-bottom: 1vh; /* Espacement entre les liens */
     }
 }
