@@ -45,6 +45,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Miniatures dynamiques 
 
+document.addEventListener('DOMContentLoaded', function () {
+    let thumbnailImage = document.createElement('img');
+    thumbnailImage.classList.add('thumbnail-hover');
+    document.body.appendChild(thumbnailImage);
+
+    document.querySelectorAll('.prev, .next').forEach(link => {
+        link.addEventListener('mouseover', function () {
+            let imageSrc = this.getAttribute('data-thumbnail');
+            if (imageSrc) {
+                thumbnailImage.src = imageSrc;
+                thumbnailImage.style.display = 'block';
+            }
+        });
+
+        link.addEventListener('mousemove', function (e) {
+            thumbnailImage.style.left = e.pageX + 10 + 'px';
+            thumbnailImage.style.top = e.pageY + 10 + 'px';
+        });
+
+        link.addEventListener('mouseout', function () {
+            thumbnailImage.style.display = 'none';
+        });
+    });
+});
+
+
+// Fonction pour récupérer l'URL de la miniature via un PHP script AJAX ou autre
+function getThumbnailUrl(postId) {
+    // Exemple d'appel pour obtenir la miniature via un AJAX ou une variable PHP.
+    return '<?php echo get_the_post_thumbnail_url(postId, "thumbnail"); ?>';
+}
+
 
 
 // Ouverture popup avec jQuery 
@@ -57,7 +89,7 @@ jQuery(document).ready(function($) {
 
         // Si la référence est récupérée, l'insérer dans le champ du formulaire
         if (reference) {
-            $('input[name="réf-photo"]').val(reference);  // Assure-toi que le name du champ est correct
+            $('input[name="ref-photo"]').val(reference);  // Assure-toi que le name du champ est correct
         }
 
         // Ouvrir la modale
