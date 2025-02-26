@@ -56,10 +56,10 @@
         <?php
         // Récupérer une image aléatoire depuis la médiathèque
         $args = array(
-        'post_type'      => 'attachment',
-        'post_mime_type' => 'image',
-        'post_status'    => 'inherit',
-        'posts_per_page' => -1, // Récupérer toutes les images
+            'post_type'      => 'attachment',
+            'post_mime_type' => 'image',
+            'post_status'    => 'inherit',
+            'posts_per_page' => -1, // Récupérer toutes les images
         );
 
         $query = new WP_Query($args);
@@ -67,13 +67,19 @@
 
         if ($query->have_posts()) {
             $images = array();
-        while ($query->have_posts()) {
-            $query->the_post();
-            $image_url = wp_get_attachment_url(get_the_ID());
-        if ($image_url) {
-            $images[] = $image_url;
-        }
-    }
+            while ($query->have_posts()) {
+                $query->the_post();
+                $image_url = wp_get_attachment_url(get_the_ID());
+
+                if ($image_url) {
+                    // Vérifier si l'image est en mode paysage (largeur > hauteur)
+                    $image_size = getimagesize($image_url); // Récupérer les dimensions de l'image
+
+                    if ($image_size[0] > $image_size[1]) { // Si la largeur est plus grande que la hauteur
+                        $images[] = $image_url; // Ajouter l'image à la liste des images valides
+                    }
+                }
+            }
 
         // Sélectionner une image aléatoire si la médiathèque contient des images
         if (!empty($images)) {
