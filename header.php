@@ -52,10 +52,42 @@
     <!-- Image du header sous la navigation -->
     <?php if (is_front_page()) : ?>
         <!-- Image du header, affichée uniquement sur la page d'accueil -->
-    <div class="header-image">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/header.jpeg" alt="Header Image">
-        <div class="header-title"> PHOTOGRAPHE EVENT
-        </div>
+    <div class="header-image">  
+        <?php
+        // Récupérer une image aléatoire depuis la médiathèque
+        $args = array(
+        'post_type'      => 'attachment',
+        'post_mime_type' => 'image',
+        'post_status'    => 'inherit',
+        'posts_per_page' => -1, // Récupérer toutes les images
+        );
+
+        $query = new WP_Query($args);
+        $random_image = get_template_directory_uri() . "/assets/header.jpeg"; // Image par défaut
+
+        if ($query->have_posts()) {
+            $images = array();
+        while ($query->have_posts()) {
+            $query->the_post();
+            $image_url = wp_get_attachment_url(get_the_ID());
+        if ($image_url) {
+            $images[] = $image_url;
+        }
+    }
+
+        // Sélectionner une image aléatoire si la médiathèque contient des images
+        if (!empty($images)) {
+        $random_image = $images[array_rand($images)];
+    }
+
+    wp_reset_postdata();
+}
+?>
+
+<div class="header-image">
+    <img src="<?php echo esc_url($random_image); ?>" alt="Header Image">
+    <div class="header-title">PHOTOGRAPHE EVENT</div>
+</div>
     </div>
     <?php endif; ?>
 </header>
