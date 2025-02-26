@@ -632,7 +632,7 @@ button#openContactModal:hover {
 /* Menu mobile (plein écran) */
     .mobile-menu {
     position: fixed;
-    top: 0;
+    top: 6vh;
     left: 100%;
     width: 100vw;
     height: 100vh;
@@ -670,5 +670,5 @@ button#openContactModal:hover {
 }
 
 .logo img {
-    height: 1vh;
+    height: 2vh;
 }

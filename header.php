@@ -9,17 +9,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-/*jQuery(document).ready(function($) {
-    $(".menu-burger").click(function() {
-        $(".mobile-menu").toggleClass("open");
-        $(this).toggleClass("open");
-    });
 
-    $(".mobile-menu a").click(function() {
-        $(".mobile-menu").removeClass("open");
-        $(".menu-burger").removeClass("open");
-    });
-});*/
 </script>
     <?php wp_head(); ?>
 
