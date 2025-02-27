@@ -677,3 +677,68 @@ button#openContactModal:hover {
 .logo img {
     height: 2vh;
 }
+
+
+
+
+/* Responsive pour les écrans de moins de 768px (tablette & mobile) */
+@media screen and (max-width: 768px) {
+    /* Conteneur principal en colonne */
+    .single-photo-container {
+        padding: 0 5%; /* Réduction des marges */
+        height: auto; /* Suppression du height 100vh */
+    }
+
+    /* Changer l'ordre : Image d'abord, texte ensuite */
+    .photo-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 5vh;
+        border-bottom: 1px solid black;
+    }
+
+    /* Ajustement du texte */
+    .photo-info {
+        max-width: 100%;
+        padding-right: 0;
+        border-bottom: none;
+        margin-top: 20px;
+    }
+
+    .photo-info h2 {
+        font-size: 36px; /* Taille réduite */
+    }
+
+    .photo-info p {
+        font-size: 12px;
+    }
+
+    /* Image en pleine largeur */
+    .photo-display {
+        max-width: 100%;
+        margin-left: 0;
+        max-height: none;
+    }
+
+    .photo-frame img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Centrer le bouton */
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    button#openContactModal {
+        position: static;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .photo-navigation{
+        display: none;
+    }
+}
