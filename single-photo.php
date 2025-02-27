@@ -8,7 +8,7 @@ get_header();
 
 <main class="single-photo-container">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="photo-content">
+        <div class="photo-content full-width-border">
             
             <!-- Infos à gauche -->
             <div class="photo-info">
@@ -51,7 +51,7 @@ get_header();
             </div>
 
         </div>
-        <div class="contact-section">
+        <div class="contact-section full-width-border">
                     <p>Cette photo vous intéresse ?</p>
                     <button id="openContactModal" data-reference="<?php echo esc_attr(SCF::get('reference')); ?>">Contact</button>
 
