@@ -104,23 +104,44 @@ jQuery(document).ready(function($) {
 
 // Menu burger 
 
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    const burger = document.querySelector(".menu-burger");
-    const menu = document.querySelector(".mobile-menu"); // Assure-toi que c'est le bon sélecteur
-    const footer = document.querySelector(".footer-menu");
+    const body = document.body;
+    const menuBurger = document.querySelector(".menu-burger");
+    const mobileMenu = document.querySelector(".mobile-menu");
 
-    burger.addEventListener("click", function () {
-        menu.classList.toggle("open");
-        burger.classList.toggle("open");
+    menuBurger.addEventListener("click", function () {
+        mobileMenu.classList.toggle("open");
+        menuBurger.classList.toggle("active");
+        body.classList.toggle("no-scroll");
+    });
 
-        // Si le menu est ouvert, on cache le footer, sinon on l'affiche
-        if (menu.classList.contains("open")) {
-            footer.style.display = "none";
-        } else {
-            footer.style.display = "flex"; // ou "block" selon ton layout
+    // Fermer le menu si on clique en dehors
+    document.addEventListener("click", function (event) {
+        if (
+            !menuBurger.contains(event.target) &&
+            !mobileMenu.contains(event.target)
+        ) {
+            mobileMenu.classList.remove("open");
+            menuBurger.classList.remove("active");
+            body.classList.remove("no-scroll");
         }
     });
+
+    // Fermer le menu si on clique sur un lien du menu
+    mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function () {
+            mobileMenu.classList.remove("open");
+            menuBurger.classList.remove("active");
+            body.classList.remove("no-scroll");
+        });
+    });
 });
+
+
 
 
 

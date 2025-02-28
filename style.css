@@ -78,6 +78,15 @@ body{
     background-color: white;
 }
 
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
 /* Menus */
 .main-nav {
     background-color: white; /* Fond blanc */
@@ -148,13 +157,13 @@ ul {
 }
 
 /* Animation du burger en X */
-    .menu-burger.open .line1 {
+    .menu-burger.active .line1 {
     transform: translateY(8px) rotate(45deg);
 }
-    .menu-burger.open .line2 {
+    .menu-burger.active .line2 {
     opacity: 0;
 }
-    .menu-burger.open .line3 {
+    .menu-burger.active .line3 {
     transform: translateY(-8px) rotate(-45deg);
 }
 
@@ -165,6 +174,8 @@ ul {
 /* Style global du header */
 .site-header {
     background-color: white; /* Fond blanc */
+    padding-top: 2vh;
+    padding-bottom: 3vh;
 }
 
 /* Container en flexbox */
@@ -191,7 +202,6 @@ ul {
     width: 100%; 
     height: auto;
 }
-
 
 .header-title{
     position: absolute;
@@ -345,7 +355,7 @@ input, textarea {
 .single-photo-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Adapte le contenu à la hauteur de l'écran */
+    /*height: 100vh; Adapte le contenu à la hauteur de l'écran */
     padding: 0 10%;
 }
 
@@ -767,5 +777,38 @@ button#openContactModal:hover {
 
     .photo-navigation{
         display: none;
+    }
+}
+
+
+
+.logo img {
+    width: 65vh; /* Augmenté pour être plus visible */
+    max-width: 250px; /* Taille max pour éviter qu'il devienne énorme */
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+/* Ajustement pour les tablettes */
+@media screen and (max-width: 1024px) {
+    .logo img {
+        width: 50vw; /* Augmenté pour plus de visibilité */
+        max-width: 220px;
+    }
+}
+
+/* Ajustement pour les mobiles */
+@media screen and (max-width: 768px) {
+    .logo img {
+        width: 45vw; /* Taille plus grande pour les petits écrans */
+        max-width: 200px;
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+    .logo img {
+        width: 40vw; /* Encore plus grand pour assurer une bonne lisibilité */
+        max-width: 180px;
     }
 }
