@@ -167,10 +167,6 @@ ul {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.logo img {
-    height: 2vh;
-}
-
 /* Style global du header */
 .site-header {
     background-color: white; /* Fond blanc */
@@ -187,22 +183,22 @@ ul {
 
 /* Logo */
 .logo img {
-    height: 3vh; /* Ajuster la taille du logo selon la hauteur de l'écran */
+    width: 65vh; 
+    max-width: 250px; 
+    height: auto;
     padding-left: 5vw;
+    transition: width 0.3s ease;
 }
 
 /* Image header */ 
-
 .header-image{
     position: relative;
     width: auto;
 }
-
 .header-image img{
     width: 100%; 
     height: auto;
 }
-
 .header-title{
     position: absolute;
     top: 50%; 
@@ -219,7 +215,6 @@ ul {
 }
 
 /* Footer */ 
-
 .footer-menu{
     display: flex;
     flex-wrap: wrap;
@@ -230,13 +225,11 @@ ul {
     padding: 2vh 0; /* Espacement vertical dynamique */
     border-top: 0.2vh solid black; /* Épaisseur du trait adaptée */
 }
-
 .footer-menu a {
     font-size: 1.2vw; /* Taille de texte responsive */
 }
 
 /* Modale */ 
-
 .modal {
     display: none; /* Caché par défaut */
     position: fixed;
@@ -250,27 +243,22 @@ ul {
     z-index: 1100;
     overflow: auto;
 }
-
 .modal-content {
     background-color: white;
-    /*position: fixed;*/
     position: relative;
     padding: 20px;
     border-radius: 5px;
     width: 60vh;
-    height: 80vh;
+    height: auto; 
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
-
 nav{
     z-index: 500;
 }
-
 button.open-modal{
     display: none;
 }
-
 .img-formulaire {
     width: 150%;
     position: absolute;
@@ -283,13 +271,11 @@ button.open-modal{
     object-fit: cover;
     margin: 0 auto; 
 }
-
 .wpcf7{
     justify-content: center;
     display: flex;
     padding-top: 90px;
 }
-
 .close {
     position: absolute;
     top: 7px;
@@ -297,7 +283,6 @@ button.open-modal{
     font-size: 10px;
     cursor: pointer;
 }
-
 .wpcf7-form-control.wpcf7-submit {
     width: 100%;
     padding: 15px;
@@ -307,7 +292,6 @@ button.open-modal{
     transition: all 0.3s ease;
     color: black;
 }
-
 .wpcf7-form-control.wpcf7-text{
     border-radius: 8px;
     height: 30px;
@@ -318,13 +302,11 @@ button.open-modal{
     font-weight: 400;
     
 }
-
 .wpcf7-form-control.wpcf7-textarea{
    border-radius: 8px; 
    border-color: #B8BBC2;
    width: 340px !important;
 }
-
 .wpcf7-form-control.wpcf7-submit{
     font-family: 'Space Mono', monospace;
     background-color: #D8D8D8;
@@ -342,7 +324,6 @@ button.open-modal{
     color: black;
     font-style: normal;
 }
-
 input, textarea {
     border: 1px solid #000; /* Bordure noire plus fine */
     box-shadow: none;
@@ -351,14 +332,12 @@ input, textarea {
 }
 
 /* Single photo */ 
-
 .single-photo-container {
     display: flex;
     flex-direction: column;
     /*height: 100vh; Adapte le contenu à la hauteur de l'écran */
     padding: 0 10%;
 }
-
 .photo-content {
     display: flex;
     flex: 1;
@@ -374,7 +353,6 @@ input, textarea {
     padding-right: 20px;
     border-bottom: 1px solid black
 }
-
 .photo-info h2 {
     font-weight: normal;
     text-transform: uppercase;
@@ -382,7 +360,6 @@ input, textarea {
     font-family: "Space Mono", monospace;
     font-style: italic;
 }
-
 .photo-info p {
     font-size: 14px;
     margin: 5px 0;
@@ -403,7 +380,6 @@ input, textarea {
     max-height: 80vh; 
     margin-left: 15px;
 }
-
 .photo-frame {
     width: 100%;
     height: 100%;
@@ -412,7 +388,6 @@ input, textarea {
     justify-content: center;
     align-items: flex-end;
 }
-
 .photo-frame img {
     max-width: 100%;
     height: auto;
@@ -508,36 +483,30 @@ button#openContactModal:hover {
 }
 
 /*Photos apparentées */ 
-
 .photos-related h2{
     font-family: 'Space Mono', monospace;
     font-weight: 400; /* Regular */
     font-style: normal;
     text-transform: uppercase;
 }
-
 .bloc-photos {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
 }
-
 .photo-item {
     position: relative;
     overflow: hidden;
 }
-
 .photo-item img {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
 }
-
 .photo-item:hover img {
     transform: scale(1.05);
 }
-
 .photo-hover-icons {
     position: absolute;
     bottom: 10px;
@@ -548,11 +517,9 @@ button#openContactModal:hover {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
-
 .photo-item:hover .photo-hover-icons {
     opacity: 1;
 }
-
 .photo-hover-icons a {
     background: rgba(0, 0, 0, 0.6);
     color: white;
@@ -567,33 +534,27 @@ button#openContactModal:hover {
 @media screen and (max-width: 1024px) {
     .single-photo-container {
         padding: 0 5%;
-    }
-    
+    }   
     .photo-content {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .photo-info, .photo-display {
         max-width: 100%;
         text-align: left;
     }
-
     .photo-display {
         margin-top: 20px;
     }
-
     .photo-frame {
         width: 100%;
         max-height: 50vh;
     }
-
     .photo-actions {
         flex-direction: column;
         height: auto;
         text-align: center;
     }
-
     .photo-navigation {
         margin-top: 10px;
     }
@@ -603,9 +564,9 @@ button#openContactModal:hover {
     .full-width-border::after {
         content: "";
         display: block;
-        width: 100vw; /* Largeur de toute la fenêtre */
-        height: 1px; /* Épaisseur de la bordure */
-        background-color: black; /* Couleur de la bordure */
+        width: 100vw; 
+        height: 0.2vh; 
+        background-color: black; 
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -634,11 +595,9 @@ button#openContactModal:hover {
         border-bottom: none;
         margin-top: 20px;
     }
-
     .photo-info h2 {
         font-size: 36px; /* Taille réduite */
     }
-
     .photo-info p {
         font-size: 12px;
     }
@@ -649,7 +608,6 @@ button#openContactModal:hover {
         margin-left: 0;
         max-height: none;
     }
-
     .photo-frame img {
         width: 100%;
         height: auto;
@@ -661,13 +619,11 @@ button#openContactModal:hover {
         align-items: center;
         text-align: center;
     }
-
     button#openContactModal {
         position: static;
         width: 100%;
         max-width: 200px;
     }
-
     .photo-navigation{
         display: none;
     }
@@ -711,21 +667,17 @@ button#openContactModal:hover {
         text-align: center;
     }
     .footer-menu a {
-        margin-bottom: 1vh; /* Espacement entre les liens */
+        margin-bottom: 1vh; 
     }
     
 }
 
-
-
-/* Responsive pour les écrans de moins de 768px (tablette & mobile) */
+/* Responsive pour les écrans de moins de 768px */
 @media screen and (max-width: 768px) {
-    /* Conteneur principal en colonne */
     .single-photo-container {
-        padding: 0 5%; /* Réduction des marges */
-        height: auto; /* Suppression du height 100vh */
+        padding: 0 5%; 
+        height: auto; 
     }
-
     /* Changer l'ordre : Image d'abord, texte ensuite */
     .photo-content {
         flex-direction: column-reverse;
@@ -733,7 +685,6 @@ button#openContactModal:hover {
         padding: 5vh;
         border-bottom: 1px solid black;
     }
-
     /* Ajustement du texte */
     .photo-info {
         max-width: 100%;
@@ -741,74 +692,100 @@ button#openContactModal:hover {
         border-bottom: none;
         margin-top: 20px;
     }
-
     .photo-info h2 {
         font-size: 36px; /* Taille réduite */
     }
-
     .photo-info p {
         font-size: 12px;
     }
-
     /* Image en pleine largeur */
     .photo-display {
         max-width: 100%;
         margin-left: 0;
         max-height: none;
     }
-
     .photo-frame img {
         width: 100%;
         height: auto;
     }
-
     /* Centrer le bouton */
     .contact-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
     button#openContactModal {
         position: static;
         width: 100%;
         max-width: 200px;
     }
-
     .photo-navigation{
         display: none;
     }
-}
-
-
-
-.logo img {
-    width: 65vh; /* Augmenté pour être plus visible */
-    max-width: 250px; /* Taille max pour éviter qu'il devienne énorme */
-    height: auto;
-    transition: width 0.3s ease;
+    .logo img {
+        width: 45vw; 
+        max-width: 200px;
+    }
+    .modal-content {
+        width: 80%;
+        height: auto;
+    }
+    .img-formulaire {
+        width: 120%; /* Réduit la largeur de l'image sur les petits écrans */
+    }
+    .wpcf7-form-control.wpcf7-text, .wpcf7-form-control.wpcf7-textarea {
+        width: 100%; /* Champs de formulaire prennent toute la largeur sur mobile */
+    }
+    .wpcf7-form-control.wpcf7-submit {
+        font-size: 16px; /* Taille de police plus petite pour s'adapter aux petits écrans */
+        height: 50px; /* Ajustement de la taille du bouton */
+    }
 }
 
 /* Ajustement pour les tablettes */
 @media screen and (max-width: 1024px) {
     .logo img {
-        width: 50vw; /* Augmenté pour plus de visibilité */
+        width: 50vw;
         max-width: 220px;
-    }
-}
-
-/* Ajustement pour les mobiles */
-@media screen and (max-width: 768px) {
-    .logo img {
-        width: 45vw; /* Taille plus grande pour les petits écrans */
-        max-width: 200px;
     }
 }
 
 /* Très petits écrans */
 @media screen and (max-width: 480px) {
     .logo img {
-        width: 40vw; /* Encore plus grand pour assurer une bonne lisibilité */
+        width: 40vw;
         max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 80%; /* Encore plus petit sur les très petits écrans */
+        height: auto; /* Laisser la hauteur s'ajuster pour les petits écrans */
+    }
+
+    .img-formulaire {
+        width: 100%; /* Image qui s'ajuste parfaitement sur les très petits écrans */
+    }
+
+    .close {
+        font-size: 14px; /* Plus gros bouton de fermeture sur mobile */
+    }
+
+    .wpcf7-form-control.wpcf7-submit {
+        padding: 12px; /* Bouton un peu plus petit sur mobile */
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .modal-content {
+        width: 50%; 
+        height: auto; 
+    }
+}
+@media (min-width: 1025px) {
+    .img-formulaire {
+        padding-bottom: 3vh; /* Applique 3vh de padding en bas */
     }
 }
