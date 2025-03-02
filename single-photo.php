@@ -141,11 +141,15 @@ if ($terms && !is_wp_error($terms)) {
 
     // 4. Affiche les résultats
     if ($my_query->have_posts()) :
-        while ($my_query->have_posts()) : $my_query->the_post();
-            //the_title();
-            //the_content();
-            the_post_thumbnail('medium'); // Affiche l'image en taille moyenne
-        endwhile;
+        while ($my_query->have_posts()) : $my_query->the_post();?>
+        <div class="photo-item">
+        <?php the_post_thumbnail('medium'); ?>
+        <div class="overlay">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icone_eye.png" alt="Voir" class="icon-eye">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_fullscreen.png" alt="Agrandir" class="icon-fullscreen">
+        </div>
+    </div>
+        <?php endwhile;
     else :
         echo 'Aucune photo trouvée dans cette catégorie.';
     endif;
