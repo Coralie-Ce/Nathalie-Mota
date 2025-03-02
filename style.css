@@ -483,51 +483,7 @@ button#openContactModal:hover {
 }
 
 /*Photos apparentées */ 
-.photos-related h2{
-    font-family: 'Space Mono', monospace;
-    font-weight: 400; /* Regular */
-    font-style: normal;
-    text-transform: uppercase;
-}
-.bloc-photos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-.photo-item {
-    position: relative;
-    overflow: hidden;
-}
-.photo-item img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-.photo-item:hover img {
-    transform: scale(1.05);
-}
-.photo-hover-icons {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-.photo-item:hover .photo-hover-icons {
-    opacity: 1;
-}
-.photo-hover-icons a {
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 8px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 18px;
-}
+
 
 
 /* Responsive */

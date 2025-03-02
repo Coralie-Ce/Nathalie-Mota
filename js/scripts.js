@@ -104,10 +104,6 @@ jQuery(document).ready(function($) {
 
 // Menu burger 
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
     const menuBurger = document.querySelector(".menu-burger");

@@ -109,61 +109,56 @@ get_header();
     <h2>VOUS AIMEREZ AUSSI</h2>
 </div>
 
+    
+
 <div class="bloc-photos">
+  
 <?php
-if (has_post_thumbnail()) {
-    echo '✅ Image trouvée pour ' . get_the_title();
-} else {
-    echo '❌ Aucune image mise en avant pour ' . get_the_title();
+// 1. Récupère les termes de la catégorie de l'article actuel
+$terms = get_the_terms($post->ID, 'categorie');
+if ($terms && !is_wp_error($terms)) {
+    $term_slugs = array();
+    foreach ($terms as $term) {
+        $term_slugs[] = $term->slug; // Récupère le slug de chaque terme
+    }
+
+    // 2. On définit les arguments pour la WP_Query
+    $args = array(
+        'post_type' => 'photo',
+        'post__not_in' => array($post->ID), // Exclut la photo actuelle
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'categorie', // Taxonomie à utiliser
+                'field' => 'slug',
+                'terms' => $term_slugs, // Utilise les slugs des termes récupérés
+                'operator' => 'IN', // Inclut tous les termes correspondants
+            ),
+        ),
+        'posts_per_page' => 2, // Limite à 2 photos
+    );
+
+    // 3. Exécute la WP Query
+    $my_query = new WP_Query($args);
+
+    // 4. Affiche les résultats
+    if ($my_query->have_posts()) :
+        while ($my_query->have_posts()) : $my_query->the_post();
+            the_title();
+            //the_content();
+            the_post_thumbnail('medium'); // Affiche l'image en taille moyenne
+        endwhile;
+    else :
+        echo 'Aucune photo trouvée dans cette catégorie.';
+    endif;
+
+    // 5. Réinitialise la requête
+    wp_reset_postdata();
 }
 ?>
 
-    <?php
-    // Récupération des catégories de la photo actuelle
-    $categories = get_the_terms(get_the_ID(), 'categorie'); // Vérifie que 'categorie' est bien le slug correct
 
-    if ($categories && !is_wp_error($categories)) {
-        $category_ids = wp_list_pluck($categories, 'term_id'); // Récupère les IDs des catégories
 
-        // WP_Query pour récupérer 2 autres photos de la même catégorie
-        $args = array(
-            'post_type'      => 'photos', // Vérifie que c'est bien le post type utilisé
-            'posts_per_page' => 2, // On veut 2 photos apparentées
-            'post__not_in'   => array(get_the_ID()), // Exclut la photo actuelle
-            'tax_query'      => array(
-                array(
-                    'taxonomy' => 'categorie',
-                    'field'    => 'term_id',
-                    'terms'    => $category_ids,
-                ),
-            ),
-        );
-
-        $related_photos = new WP_Query($args);
-
-        if ($related_photos->have_posts()) : ?>
-            <div class="related-photos">
-                <div class="photo-container">
-                    <?php while ($related_photos->have_posts()) : $related_photos->the_post(); ?>
-                        <div class="photo-item">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('large'); ?>
-                            </a>
-                            <div class="photo-hover-icons">
-                                <a href="<?php the_permalink(); ?>" class="icon-eye">👁</a>
-                                <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" class="icon-fullscreen">⛶</a>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-                </div>
-            </div>
-        <?php endif;
-
-        wp_reset_postdata(); // Reset WP Query
-    }
-    ?>
 </div>
-
 
 
     
