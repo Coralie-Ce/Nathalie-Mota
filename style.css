@@ -484,7 +484,18 @@ button#openContactModal:hover {
 
 /*Photos apparentées */ 
 
+.bloc-photos{
+    justify-content: center;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 144px 30px 144px;
+}
 
+.photo-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
 
 /* Responsive */
 @media screen and (max-width: 1024px) {

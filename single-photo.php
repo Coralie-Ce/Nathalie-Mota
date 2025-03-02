@@ -109,10 +109,9 @@ get_header();
     <h2>VOUS AIMEREZ AUSSI</h2>
 </div>
 
-    
 
 <div class="bloc-photos">
-  
+  <div class="photo-grid">
 <?php
 // 1. Récupère les termes de la catégorie de l'article actuel
 $terms = get_the_terms($post->ID, 'categorie');
@@ -143,7 +142,7 @@ if ($terms && !is_wp_error($terms)) {
     // 4. Affiche les résultats
     if ($my_query->have_posts()) :
         while ($my_query->have_posts()) : $my_query->the_post();
-            the_title();
+            //the_title();
             //the_content();
             the_post_thumbnail('medium'); // Affiche l'image en taille moyenne
         endwhile;
@@ -157,7 +156,7 @@ if ($terms && !is_wp_error($terms)) {
 ?>
 
 
-
+</div>
 </div>
 
 
