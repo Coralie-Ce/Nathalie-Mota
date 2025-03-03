@@ -533,6 +533,7 @@ button#openContactModal:hover {
 .overlay img {
     width: 20px;
     height: 20px;
+    object-fit: contain;
 }
 
 .overlay .icon-fullscreen{
