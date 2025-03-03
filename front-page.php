@@ -41,7 +41,37 @@ get_header();
     </div>
 </div>
 
+<div class="photo-grid">
+        <?php
+        $args = array(
+            'post_type' => 'photo',
+            'posts_per_page' => 8, // Afficher toutes les photos
+            'orderby' => 'date',
+            'order' => 'DESC',
+        );
 
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post(); ?>
+
+                <div class="photo-item">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_post_thumbnail('large'); ?>
+                        <div class="overlay">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_eye.png" alt="Voir" class="icon-eye">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_fullscreen.png" alt="Agrandir" class="icon-fullscreen">
+                        </div>
+                    </a>
+                </div>
+
+            <?php endwhile;
+            wp_reset_postdata();
+        else :
+            echo '<p>Aucune photo disponible.</p>';
+        endif;
+        ?>
+    </div>
 
 
 <!-- Bloc photos -->
