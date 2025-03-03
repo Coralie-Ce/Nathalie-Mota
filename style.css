@@ -488,7 +488,7 @@ button#openContactModal:hover {
     justify-content: center;
     display: flex;
     grid-template-columns: 1fr 1fr;
-    padding: 0 144px 30px 144px;
+    padding-bottom: 5vh;
 }
 
 .photo-grid{
@@ -524,7 +524,7 @@ button#openContactModal:hover {
     background: rgba(0, 0, 0, 0.4); /* Ajoute un léger fondu au survol */
 }
 .overlay .icon-eye{
-    width: 10%;
+    width: 3vh;
 }
 .overlay .icon-fullscreen{
     width: 3vh;
@@ -544,7 +544,6 @@ button#openContactModal:hover {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 
 .photo-item .overlay {
     position: absolute;
