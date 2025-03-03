@@ -143,7 +143,7 @@ if ($terms && !is_wp_error($terms)) {
     if ($my_query->have_posts()) :
         while ($my_query->have_posts()) : $my_query->the_post();?>
         <div class="photo-item">
-        <?php the_post_thumbnail('full'); ?>
+        <?php the_post_thumbnail('large'); ?>
         <div class="overlay">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_eye.png" alt="Voir" class="icon-eye">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_fullscreen.png" alt="Agrandir" class="icon-fullscreen">

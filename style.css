@@ -135,7 +135,7 @@ ul {
 /* Menu mobile (plein écran) */
 .mobile-menu {
     position: fixed;
-    top: 11vh;
+    top: 55px;
     left: 100%;
     width: 100vw;
     height: 100vh;
@@ -179,6 +179,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Espace entre le logo et le menu */
+    /*position: relative;*/
 }
 
 /* Logo */
@@ -222,11 +223,11 @@ ul {
     padding-bottom: 20px;
     /*border-top: black 1px solid;
     padding-top: 20px;*/
-    padding: 2vh 0; /* Espacement vertical dynamique */
-    border-top: 0.2vh solid black; /* Épaisseur du trait adaptée */
+    padding: 2vh 0; 
+    border-top: 0.2vh solid black;
 }
 .footer-menu a {
-    font-size: 1.2vw; /* Taille de texte responsive */
+    font-size: 1.2vw; 
 }
 
 /* Modale */ 
@@ -504,8 +505,10 @@ button#openContactModal:hover {
 }
 
 .photo-item img {
-    width: 100%;
-    height: auto;
+    /*width: 100%;
+    height: auto;*/
+    width: 564px;
+    height: 495px;
     display: block;
     object-fit: cover;
 }
@@ -514,7 +517,7 @@ button#openContactModal:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 3vh;
+    /*width: 3vh;*/
     height: 100%;
     display: flex;
     align-items: center;
@@ -523,9 +526,15 @@ button#openContactModal:hover {
     transition: opacity 0.3s ease-in-out;
     background: rgba(0, 0, 0, 0.4); /* Ajoute un léger fondu au survol */
 }
-.overlay .icon-eye{
+/*.overlay .icon-eye{
     width: 3vh;
+}*/
+
+.overlay img {
+    width: 20px;
+    height: 20px;
 }
+
 .overlay .icon-fullscreen{
     width: 3vh;
     height: 3vh;
@@ -538,7 +547,7 @@ button#openContactModal:hover {
 }
 
 .icon-eye {
-    height: 10px;
+    /*height: 10px;*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -568,6 +577,7 @@ button#openContactModal:hover {
     align-items: center;
     width: 100%; 
     margin-bottom: 20px;
+    gap: 2vh;
 }
 
 .filter-left {
@@ -614,7 +624,7 @@ button#openContactModal:hover {
     border-radius : 2px;
     border: none;
     padding: 2vh;
-    width: 272px;
+    width: 260px;
 }
 /* Responsive */
 @media screen and (max-width: 1024px) {
@@ -859,7 +869,7 @@ button#openContactModal:hover {
     }
 
     .wpcf7-form-control.wpcf7-submit {
-        padding: 12px; /* Bouton un peu plus petit sur mobile */
+        padding: 12px; 
         font-size: 14px;
     }
 }
@@ -872,6 +882,34 @@ button#openContactModal:hover {
 }
 @media (min-width: 1025px) {
     .img-formulaire {
-        padding-bottom: 3vh; /* Applique 3vh de padding en bas */
+        padding-bottom: 3vh; 
+    }
+}
+
+
+
+@media screen and (max-width: 768px) { 
+    .filter-bar {
+        flex-direction: column; 
+        align-items: stretch; 
+        display: flex;
+        justify-content: center;
+        gap: 10px; 
+    }
+
+    .filter-left, 
+    .filter-right {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        padding-left: 0; 
+        padding-right: 0;
+
+    }
+
+    select {
+        width: 80%; 
+        max-width: 300px; 
+        text-align: center; 
     }
 }
