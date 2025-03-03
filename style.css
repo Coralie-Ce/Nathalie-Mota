@@ -560,13 +560,24 @@ button#openContactModal:hover {
 }
 
 
-/* Filtres page d'accueil */ 
+/* Filtres page d'accueil  */
 
 .filter-bar {
     display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%; 
+    margin-bottom: 20px;
+}
+
+.filter-left {
+    display: flex;
     gap: 15px;
-    margin-bottom: 30px;
-    padding-left: 5vw
+    padding-left: 5vw;
+}
+
+.filter-right {
+    padding-right: 5vw;
 }
 
 .filter-bar select {
@@ -589,6 +600,22 @@ button#openContactModal:hover {
     color: white;
 }
 
+.more-content{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3vh;
+}
+
+.bouton-charger-plus{
+    background-color: #D8D8D8;
+    font-family: 'Space Mono', monospace;
+    font-size: 2vh;
+    font-weight: 300;
+    border-radius : 2px;
+    border: none;
+    padding: 2vh;
+    width: 272px;
+}
 /* Responsive */
 @media screen and (max-width: 1024px) {
     .single-photo-container {

@@ -9,6 +9,7 @@ get_header();
 
 <!-- Section filtres -->
 <div class="filter-bar">
+    <div class="filter-left">
     <!-- Section catégorie-->
     <select id="category-filter">
             <option value="">CATÉGORIES</option>
@@ -29,12 +30,15 @@ get_header();
             }
             ?>
     </select>
+    </div>
+    <div class="filter-right">
 <!-- Section trier par -->
     <select id="sort-filter">
             <option value="date">TRIER PAR</option>
             <option value="recent">Les plus récents</option>
             <option value="oldest">Les plus anciens</option>
     </select>
+    </div>
 </div>
 
 
@@ -46,8 +50,8 @@ get_header();
 <?php include get_template_directory() . '/template-parts/photo-block.php'; ?>
 </div>
 
-<div class="bouton-chargement">
-
+<div class="more-content">
+<button class="bouton-charger-plus">Charger plus</button>
 </div>
 
 <?php
