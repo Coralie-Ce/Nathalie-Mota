@@ -559,6 +559,36 @@ button#openContactModal:hover {
     transition: opacity 0.3s ease-in-out;
 }
 
+
+/* Filtres page d'accueil */ 
+
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-left: 5vw
+}
+
+.filter-bar select {
+    text-align: left;
+    width: 260px;
+    height: 43px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    font-family: 'Space Mono', monospace;
+    font-weight: 300;
+    padding-left: 2vh; 
+    padding-right: 2vh;
+}
+
+/* Style des options au survol */
+.category-filter select option:hover,
+.category-filter select option:focus {
+    background-color: #E00000;
+    color: white;
+}
+
 /* Responsive */
 @media screen and (max-width: 1024px) {
     .single-photo-container {

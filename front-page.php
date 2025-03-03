@@ -11,7 +11,7 @@ get_header();
 <div class="filter-bar">
     <!-- Section catégorie-->
     <select id="category-filter">
-            <option value="">Catégories</option>
+            <option value="">CATÉGORIES</option>
             <?php
             $categories = get_terms(array('taxonomy' => 'categorie', 'hide_empty' => true));
             foreach ($categories as $category) {
@@ -21,7 +21,7 @@ get_header();
     </select>
     <!-- Section format -->
     <select id="format-filter">
-            <option value="">Formats</option>
+            <option value="">FORMATS</option>
             <?php
             $formats = get_terms(array('taxonomy' => 'format', 'hide_empty' => true));
             foreach ($formats as $format) {
@@ -31,7 +31,7 @@ get_header();
     </select>
 <!-- Section trier par -->
     <select id="sort-filter">
-            <option value="date">Trier par</option>
+            <option value="date">TRIER PAR</option>
             <option value="recent">Les plus récents</option>
             <option value="oldest">Les plus anciens</option>
     </select>
@@ -43,8 +43,11 @@ get_header();
 <!-- Bloc photos -->
 
 <div class="container-photos">
-
 <?php include get_template_directory() . '/template-parts/photo-block.php'; ?>
+</div>
+
+<div class="bouton-chargement">
+
 </div>
 
 <?php
