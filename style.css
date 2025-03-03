@@ -507,9 +507,46 @@ button#openContactModal:hover {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
 }
 
 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.4); /* Ajoute un léger fondu au survol */
+}
+.overlay .icon-eye{
+    width: 10%;
+}
+.overlay .icon-fullscreen{
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.photo-item:hover .overlay {
+    opacity: 1;
+}
+
+.icon-eye {
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.photo-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -519,31 +556,9 @@ button#openContactModal:hover {
     align-items: center;
     justify-content: center;
     opacity: 0;
+    background: rgba(0, 0, 0, 0.3); /* Assombri légèrement */
     transition: opacity 0.3s ease-in-out;
-    background: rgba(0, 0, 0, 0.4); /* Ajoute un léger fondu au survol */
 }
-
-.photo-item:hover .overlay {
-    opacity: 1;
-}
-
-.icon-eye {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.icon-fullscreen {
-    /*width: 20px;*/
-    height: 20px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
 
 /* Responsive */
 @media screen and (max-width: 1024px) {
