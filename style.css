@@ -502,6 +502,8 @@ button#openContactModal:hover {
     position: relative;
     display: inline-block;
     overflow: hidden;
+    width: 564px;
+    height: 495px;
 }
 
 .photo-item img {
@@ -518,6 +520,7 @@ button#openContactModal:hover {
     top: 0;
     left: 0;
     /*width: 3vh;*/
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -526,9 +529,7 @@ button#openContactModal:hover {
     transition: opacity 0.3s ease-in-out;
     background: rgba(0, 0, 0, 0.4); /* Ajoute un léger fondu au survol */
 }
-/*.overlay .icon-eye{
-    width: 3vh;
-}*/
+
 
 .overlay img {
     width: 20px;
@@ -543,6 +544,15 @@ button#openContactModal:hover {
     top: 10px;
     right: 10px;
 }
+.overlay .icon-eye {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .photo-item:hover .overlay {
     opacity: 1;
 }
@@ -555,7 +565,7 @@ button#openContactModal:hover {
     transform: translate(-50%, -50%);
 }
 
-.photo-item .overlay {
+/*.photo-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -565,9 +575,19 @@ button#openContactModal:hover {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    background: rgba(0, 0, 0, 0.3); /* Assombri légèrement */
+    background: rgba(0, 0, 0, 0.3); 
     transition: opacity 0.3s ease-in-out;
+}*/
+
+/* Page d'accueil galerie */ 
+
+.photos-filtres-accueil{
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
+
+
+
 
 
 /* Filtres page d'accueil  */
@@ -584,11 +604,11 @@ button#openContactModal:hover {
 .filter-left {
     display: flex;
     gap: 15px;
-    padding-left: 5vw;
+    /*padding-left: 5vw;*/
 }
 
 .filter-right {
-    padding-right: 5vw;
+    /*padding-right: 5vw;*/
 }
 
 .filter-bar select {
@@ -615,6 +635,7 @@ button#openContactModal:hover {
     display: flex;
     justify-content: center;
     padding-bottom: 3vh;
+    padding-top: 3vh;
 }
 
 .bouton-charger-plus{
@@ -627,6 +648,8 @@ button#openContactModal:hover {
     padding: 2vh;
     width: 260px;
 }
+
+
 /* Responsive */
 @media screen and (max-width: 1024px) {
     .single-photo-container {

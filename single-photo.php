@@ -163,9 +163,6 @@ if ($terms && !is_wp_error($terms)) {
 </div>
 </div>
 
-
-    
-
 </main>
 
 

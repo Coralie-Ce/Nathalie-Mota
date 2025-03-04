@@ -6,7 +6,7 @@
 
 get_header();
 ?>
-
+<div class="photos-filtres-accueil">
 <!-- Section filtres -->
 <div class="filter-bar">
     <div class="filter-left">
@@ -78,6 +78,8 @@ get_header();
 
 <div class="container-photos">
 <?php include get_template_directory() . '/template-parts/photo-block.php'; ?>
+</div>
+
 </div>
 
 <div class="more-content">
