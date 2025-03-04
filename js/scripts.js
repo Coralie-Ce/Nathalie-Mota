@@ -177,6 +177,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Mise à jour dynamique de la galerie 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const categoryFilter = document.getElementById("category-filter");
+    const formatFilter = document.getElementById("format-filter");
+    const sortFilter = document.getElementById("sort-filter");
+    const photoContainer = document.getElementById("photo-container");
+
+    function updatePhotos() {
+        let formData = new FormData();
+        formData.append("action", "filter_photos");
+        formData.append("category", categoryFilter.value);
+        formData.append("format", formatFilter.value);
+        formData.append("sort", sortFilter.value);
+
+        fetch(ajax_url, {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                photoContainer.innerHTML = data;
+            })
+            .catch((error) => console.error("Erreur AJAX :", error));
+    }
+
+    categoryFilter.addEventListener("change", updatePhotos);
+    formatFilter.addEventListener("change", updatePhotos);
+    sortFilter.addEventListener("change", updatePhotos);
+});
 
 
 
