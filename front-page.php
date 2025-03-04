@@ -48,6 +48,7 @@ get_header();
             'posts_per_page' => 8, // Afficher toutes les photos
             'orderby' => 'date',
             'order' => 'DESC',
+            'paged' => 1,
         );
 
         $query = new WP_Query($args);
@@ -56,13 +57,14 @@ get_header();
             while ($query->have_posts()) : $query->the_post(); ?>
 
                 <div class="photo-item">
-                    <a href="<?php the_permalink(); ?>">
                         <?php the_post_thumbnail('large'); ?>
                         <div class="overlay">
+                        <a href="<?php the_permalink(); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_eye.png" alt="Voir" class="icon-eye">
+                            </a> 
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_fullscreen.png" alt="Agrandir" class="icon-fullscreen">
                         </div>
-                    </a>
+                  
                 </div>
 
             <?php endwhile;
@@ -83,7 +85,7 @@ get_header();
 </div>
 
 <div class="more-content">
-<button class="bouton-charger-plus">Charger plus</button>
+<button class="bouton-charger-plus" id="load-more" data-page="1" data-max="<?php echo $query->max_num_pages; ?>">Charger plus</button>
 </div>
 
 <?php

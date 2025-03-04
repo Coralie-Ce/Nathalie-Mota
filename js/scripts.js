@@ -137,6 +137,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Script clic bouton Charger plus page d'accueil 
+
+document.addEventListener("DOMContentLoaded", function () {
+    let loadMoreBtn = document.getElementById("load-more");
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", function () {
+            let currentPage = parseInt(loadMoreBtn.getAttribute("data-page"));
+            let maxPage = parseInt(loadMoreBtn.getAttribute("data-max"));
+
+            if (currentPage >= maxPage) {
+                loadMoreBtn.style.display = "none";
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("action", "load_more_photos");
+            formData.append("page", currentPage + 1);
+
+            fetch(ajax_url, {
+                method: "POST",
+                body: formData,
+            })
+                .then((response) => response.text())
+                .then((data) => {
+                    let grid = document.querySelector(".photo-grid");
+                    grid.insertAdjacentHTML("beforeend", data);
+
+                    loadMoreBtn.setAttribute("data-page", currentPage + 1);
+
+                    if (currentPage + 1 >= maxPage) {
+                        loadMoreBtn.style.display = "none";
+                    }
+                })
+                .catch((error) => console.error("Erreur AJAX :", error));
+        });
+    }
+});
 
 
 
