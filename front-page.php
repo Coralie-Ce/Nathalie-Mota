@@ -41,7 +41,7 @@ get_header();
     </div>
 </div>
 
-<div id="photo-container" class="photo-grid">
+<div id="photo-container" class="photo-grid-homepage">
         <?php
         $args = array(
             'post_type' => 'photo',

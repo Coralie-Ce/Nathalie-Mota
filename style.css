@@ -488,22 +488,27 @@ button#openContactModal:hover {
 .bloc-photos{
     justify-content: center;
     display: flex;
-    grid-template-columns: 1fr 1fr;
+    /*grid-template-columns: 1fr 1fr;*/
+    width: 100%; 
     padding-bottom: 5vh;
 }
 
 .photo-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .photo-item {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width: 564px;
+    /*width: 564px;*/
+    width: 100%;
     height: 495px;
+    aspect-ratio: 1;
 }
 
 .photo-item img {
@@ -586,7 +591,13 @@ button#openContactModal:hover {
     padding-right: 10vw;
 }
 
-
+.photo-grid-homepage {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    display: grid;
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+}
 
 
 
@@ -732,7 +743,12 @@ button#openContactModal:hover {
         width: 100%;
         height: auto;
     }
-
+    .photo-grid{
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+    }
+    
     /* Centrer le bouton */
     .contact-section {
         flex-direction: column;
