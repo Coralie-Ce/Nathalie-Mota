@@ -681,7 +681,7 @@ button#openContactModal:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
 }
 
@@ -694,11 +694,8 @@ button#openContactModal:hover {
     max-height: 90%;
     text-align: center;
     z-index: 1001;
-
     align-items: center;
 }
-
-
 
 /* Image à l'intérieur de la lightbox */
 #lightbox-image {
@@ -740,18 +737,23 @@ button#openContactModal:hover {
     border: none;
     font-size: 30px;
     color: #fff;
-    position: absolute;
-    top: 10px;
-    right: 10px;
     cursor: pointer;
+    z-index: 1100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
 }
 
+#lightbox-title{
+    color: white; 
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+    font-size: 2vh;
+}
 /* Cacher la lightbox par défaut */
 #lightbox {
     display: none;
 }
-
-
 
 
 /* Responsive */

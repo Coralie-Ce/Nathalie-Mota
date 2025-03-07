@@ -1,7 +1,7 @@
 <div id="lightbox" class="lightbox">
     <div class="lightbox-overlay"></div>
+    <button class="lightbox-close">&times;</button>
     <div class="lightbox-content">
-        <button class="lightbox-close">&times;</button>
         <img id="lightbox-image" src="" alt="">
         <div class="lightbox-info">
             <p id="lightbox-title"></p>
