@@ -660,6 +660,82 @@ button#openContactModal:hover {
     width: 260px;
 }
 
+/* Lightbox */
+
+/* Style de l'overlay */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none; /* Par défaut, l'overlay est caché */
+}
+
+.lightbox-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+    z-index: 1001;
+}
+
+.lightbox-info button {
+    background: none; /* Pas de fond */
+    border: none;     /* Pas de bordure */
+    color: #fff;      /* Texte en blanc */
+    font-size: 18px;  /* Taille de la police */
+    font-weight: bold; /* Police en gras */
+    cursor: pointer;  /* Curseur de clic */
+    padding: 10px;     /* Espace autour du texte */
+    transition: color 0.3s ease, transform 0.3s ease; /* Effet au survol */
+}
+
+/* Image à l'intérieur de la lightbox */
+#lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+/* Zone d'information */
+.lightbox-info {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.lightbox-prev, .lightbox-next {
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+}
+
+.lightbox-close {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Cacher la lightbox par défaut */
+#lightbox {
+    display: none;
+}
+
+
+
 
 /* Responsive */
 @media screen and (max-width: 1024px) {

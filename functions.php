@@ -131,3 +131,11 @@ function filter_photos() {
 
 add_action('wp_ajax_filter_photos', 'filter_photos');
 add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
+
+
+// Lightbox 
+
+function enqueue_lightbox_script() {
+    wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_lightbox_script');

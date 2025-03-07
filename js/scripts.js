@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
                 .then((response) => response.text())
                 .then((data) => {
-                    let grid = document.querySelector(".photo-grid");
+                    let grid = document.querySelector(".photo-grid-homepage");
                     grid.insertAdjacentHTML("beforeend", data);
 
                     loadMoreBtn.setAttribute("data-page", currentPage + 1);
@@ -208,6 +208,84 @@ document.addEventListener("DOMContentLoaded", function () {
     sortFilter.addEventListener("change", updatePhotos);
 });
 
+// Lightbox 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxTitle = document.getElementById("lightbox-title");
+    const closeButton = document.querySelector(".lightbox-close");
+    const prevButton = document.querySelector(".lightbox-prev");
+    const nextButton = document.querySelector(".lightbox-next");
+    
+    let currentIndex = 0;
+    let images = [];
+
+    // Fonction pour ouvrir la lightbox
+    function openLightbox(imageSrc, title, index) {
+        lightbox.style.display = "block";
+        lightboxImage.src = imageSrc;
+        lightboxTitle.textContent = title;
+        currentIndex = index;
+    }
+
+    // Fonction pour fermer la lightbox
+    function closeLightbox() {
+        lightbox.style.display = "none";
+    }
+
+    // Fonction pour afficher la photo précédente
+    function showPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateLightboxContent();
+        }
+    }
+
+    // Fonction pour afficher la photo suivante
+    function showNext() {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            updateLightboxContent();
+        }
+    }
+
+    // Mettre à jour l'image et le titre
+    function updateLightboxContent() {
+        const { src, title } = images[currentIndex];
+        lightboxImage.src = src;
+        lightboxTitle.textContent = title;
+    }
+
+    // Ajouter les événements pour ouvrir et fermer la lightbox
+    closeButton.addEventListener("click", closeLightbox);
+    prevButton.addEventListener("click", showPrev);
+    nextButton.addEventListener("click", showNext);
+
+    // Récupérer toutes les images avec la classe 'icon-fullscreen' et ajouter un événement pour ouvrir la lightbox
+    document.querySelectorAll(".icon-fullscreen").forEach((icon, index) => {
+        icon.addEventListener("click", () => {
+            const imageSrc = icon.getAttribute("data-fullsrc");
+            const title = icon.getAttribute("data-title");
+            
+            // Créer un tableau d'images avec leurs informations
+            images = [...document.querySelectorAll(".icon-fullscreen")].map(icon => ({
+                src: icon.getAttribute("data-fullsrc"),
+                title: icon.getAttribute("data-title"),
+            }));
+            
+            openLightbox(imageSrc, title, index);
+        });
+    });
+
+    // Fermer la lightbox en cliquant en dehors de l'image
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+});
 
 
 

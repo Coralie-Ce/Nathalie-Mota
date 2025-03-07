@@ -62,7 +62,8 @@ get_header();
                         <a href="<?php the_permalink(); ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_eye.png" alt="Voir" class="icon-eye">
                             </a> 
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_fullscreen.png" alt="Agrandir" class="icon-fullscreen">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/icon_fullscreen.png" alt="Agrandir" class="icon-fullscreen" data-fullsrc="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'large')); ?>" 
+                            data-title="<?php the_title(); ?>"> 
                         </div>
                   
                 </div>
