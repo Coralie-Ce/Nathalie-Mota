@@ -661,7 +661,19 @@ button#openContactModal:hover {
 }
 
 /* Lightbox */
-
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Fond noir transparent à 80% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow: hidden; /* Empêche le scroll */
+}
 /* Style de l'overlay */
 .lightbox-overlay {
     position: fixed;
@@ -682,6 +694,8 @@ button#openContactModal:hover {
     max-height: 90%;
     text-align: center;
     z-index: 1001;
+
+    align-items: center;
 }
 
 
@@ -690,6 +704,7 @@ button#openContactModal:hover {
 #lightbox-image {
     max-width: 100%;
     max-height: 80vh;
+    object-fit: contain;
 }
 
 /* Zone d'information */
