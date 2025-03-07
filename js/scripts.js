@@ -235,21 +235,18 @@ document.addEventListener("DOMContentLoaded", function() {
         lightbox.style.display = "none";
     }
 
-    // Fonction pour afficher la photo précédente
+    // Afficher les photos avec boucle infinie
+
     function showPrev() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateLightboxContent();
-        }
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1; // Si on est à la première image, on revient à la dernière
+        updateLightboxContent();
     }
 
-    // Fonction pour afficher la photo suivante
     function showNext() {
-        if (currentIndex < images.length - 1) {
-            currentIndex++;
-            updateLightboxContent();
-        }
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1; // Si on est à la dernière image, on revient à la première
+        updateLightboxContent();
     }
+
 
     // Mettre à jour l'image et le titre
     function updateLightboxContent() {

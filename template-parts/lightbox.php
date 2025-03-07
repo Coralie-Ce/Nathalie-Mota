@@ -5,8 +5,9 @@
         <img id="lightbox-image" src="" alt="">
         <div class="lightbox-info">
             <p id="lightbox-title"></p>
-            <button class="lightbox-prev">← Précédente</button>
-            <button class="lightbox-next">Suivante →</button>
         </div>
     </div>
+    <button class="lightbox-prev">← Précédente</button>
+    <button class="lightbox-next">Suivante →</button>
+        
 </div>
