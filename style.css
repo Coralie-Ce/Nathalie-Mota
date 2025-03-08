@@ -494,7 +494,9 @@ button#openContactModal:hover {
 }
 
 .photo-grid{
-    display: grid;
+    /*display: grid;*/
+    display: flex;
+    /*flex-wrap: wrap;*/
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     width: 100%;
@@ -509,6 +511,7 @@ button#openContactModal:hover {
     width: 100%;
     height: 495px;
     aspect-ratio: 1;
+    /*flex: 1;*/
 }
 
 .photo-item img {
@@ -518,6 +521,7 @@ button#openContactModal:hover {
     height: 495px;
     display: block;
     object-fit: cover;
+    aspect-ratio: 1;
 }
 
 .overlay {
@@ -601,8 +605,6 @@ button#openContactModal:hover {
     max-width: 1200px;
 }
 
-
-
 /* Filtres page d'accueil  */
 
 .filter-bar {
@@ -660,6 +662,7 @@ button#openContactModal:hover {
     border: none;
     padding: 2vh;
     width: 260px;
+    cursor: pointer;
 }
 
 /* Lightbox */
@@ -724,6 +727,7 @@ button#openContactModal:hover {
     position: absolute;
     top: 50%;
     z-index: 1001;
+    transform: translateY(-50%);
 }
 
 .lightbox-prev {
@@ -840,11 +844,6 @@ button#openContactModal:hover {
         width: 100%;
         height: auto;
     }
-    .photo-grid{
-        display: flex;
-        gap: 15px;
-        flex-direction: column;
-    }
     
     /* Centrer le bouton */
     .contact-section {
@@ -940,6 +939,7 @@ button#openContactModal:hover {
     .photo-frame img {
         width: 100%;
         height: auto;
+        aspect-ratio: 1;
     }
     /* Centrer le bouton */
     .contact-section {
@@ -972,6 +972,9 @@ button#openContactModal:hover {
     .wpcf7-form-control.wpcf7-submit {
         font-size: 16px; /* Taille de police plus petite pour s'adapter aux petits écrans */
         height: 50px; /* Ajustement de la taille du bouton */
+    }
+    .lightbox-prev, .lightbox-next{
+        font-size: 50%;
     }
 }
 
@@ -1009,6 +1012,9 @@ button#openContactModal:hover {
         padding: 12px; 
         font-size: 14px;
     }
+    .lightbox-prev, .lightbox-next{
+        font-size: 40%;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1023,9 +1029,18 @@ button#openContactModal:hover {
     }
 }
 
-
-
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
+    .photo-grid {
+        flex-direction: column;
+        align-items: center; 
+        display: flex;
+    }
+    .photo-item {
+        max-width: 90%; 
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+    }
     .filter-bar {
         flex-direction: column; 
         align-items: stretch; 
@@ -1033,7 +1048,6 @@ button#openContactModal:hover {
         justify-content: center;
         gap: 10px; 
     }
-
     .filter-left, 
     .filter-right {
         display: flex;
@@ -1041,12 +1055,11 @@ button#openContactModal:hover {
         align-items: center;
         padding-left: 0; 
         padding-right: 0;
-
     }
-
     select {
         width: 80%; 
         max-width: 300px; 
         text-align: center; 
     }
 }
+
