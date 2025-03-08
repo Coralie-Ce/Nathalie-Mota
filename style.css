@@ -541,7 +541,9 @@ button#openContactModal:hover {
     height: 20px;
     object-fit: contain;
 }
-
+.icon-fullscreen{
+    cursor: pointer;
+}
 .overlay .icon-fullscreen{
     width: 3vh;
     height: 3vh;
