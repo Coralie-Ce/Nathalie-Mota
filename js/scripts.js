@@ -4,18 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Script chargé"); 
     
     const modal = document.getElementById("maModal");
-    const openModal = document.querySelector(".open-modal"); 
+    const openModals = document.querySelectorAll(".open-modal"); // Sélectionne tous les éléments avec la classe .open-modal
     const openContactModal = document.getElementById("openContactModal"); // Sélectionne le bouton de la section contact
     const closeModal = document.querySelector(".close");
     const referenceField = document.querySelector('input[name="réf-photo"]');
 
-    // Ouvrir la modale depuis le menu
-    if (openModal) {
+    // Ouvrir la modale depuis le menu (desktop et mobile)
+    openModals.forEach(function(openModal) {
         openModal.addEventListener("click", function () {
             console.log("Le bouton du menu a été cliqué !");
             modal.style.display = "flex";
         });
-    }
+    });
 
     // Ouvrir la modale depuis le bouton de la section contact
     if (openContactModal) {
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Le bouton de la section contact a été cliqué !");
             const reference = this.getAttribute("data-reference");
             modal.style.display = "flex";
-
         });
     }
     
@@ -70,14 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
 // Fonction pour récupérer l'URL de la miniature via un PHP script AJAX ou autre
 function getThumbnailUrl(postId) {
     // Exemple d'appel pour obtenir la miniature via un AJAX ou une variable PHP.
     return '<?php echo get_the_post_thumbnail_url(postId, "thumbnail"); ?>';
 }
-
-
 
 // Ouverture popup avec jQuery 
 
@@ -105,14 +101,19 @@ jQuery(document).ready(function($) {
 // Menu burger 
 
 document.addEventListener("DOMContentLoaded", function () {
+    
     const body = document.body;
     const menuBurger = document.querySelector(".menu-burger");
     const mobileMenu = document.querySelector(".mobile-menu");
+
+    console.log("le DOM est chargé");
 
     menuBurger.addEventListener("click", function () {
         mobileMenu.classList.toggle("open");
         menuBurger.classList.toggle("active");
         body.classList.toggle("no-scroll");
+
+        console.log("on clique sur le bouton");
     });
 
     // Fermer le menu si on clique en dehors
@@ -176,14 +177,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
 // Mise à jour dynamique de la galerie 
 
+console.log("Script chargé");
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("DOM chargé");
+
     const categoryFilter = document.getElementById("category-filter");
     const formatFilter = document.getElementById("format-filter");
     const sortFilter = document.getElementById("sort-filter");
     const photoContainer = document.getElementById("photo-container");
+
+    console.log("categoryFilter:", categoryFilter);
+    console.log("formatFilter:", formatFilter);
+    console.log("sortFilter:", sortFilter);
+    console.log("photoContainer:", photoContainer);
+
+    if (!categoryFilter || !formatFilter || !sortFilter || !photoContainer) {
+        console.warn("Un des éléments du DOM est manquant !");
+        return;
+    }
 
     function updatePhotos() {
         let formData = new FormData();
@@ -209,7 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Lightbox 
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const lightbox = document.getElementById("lightbox");
@@ -246,7 +260,6 @@ document.addEventListener("DOMContentLoaded", function() {
         currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1; // Si on est à la dernière image, on revient à la première
         updateLightboxContent();
     }
-
 
     // Mettre à jour l'image et le titre
     function updateLightboxContent() {

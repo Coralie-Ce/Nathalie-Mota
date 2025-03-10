@@ -129,7 +129,7 @@ ul {
 
 /* Affichage du menu ouvert */
 .mobile-menu.open {
-    left: 0;
+    left: 0 !important;
 }
 
 /* Menu mobile (plein écran) */
@@ -148,6 +148,7 @@ ul {
     transition: left 0.4s ease-in-out;
     z-index: 1000;
 }
+
 
 .mobile-menu a {
     font-family: "Space Mono", monospace;
@@ -976,6 +977,11 @@ button#openContactModal:hover {
     .lightbox-prev, .lightbox-next{
         font-size: 50%;
     }
+    .photo-grid-homepage {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Ajustement pour les tablettes */
@@ -1028,7 +1034,13 @@ button#openContactModal:hover {
         padding-bottom: 3vh; 
     }
 }
+@media screen and (min-width: 768px) {
+    .filter-bar select {
+        text-align: left;
+        width: fit-content;
+    }
 
+}
 @media screen and (max-width: 768px) {
     .photo-grid {
         flex-direction: column;
@@ -1036,8 +1048,8 @@ button#openContactModal:hover {
         display: flex;
     }
     .photo-item {
-        max-width: 90%; 
-        width: 100%; 
+        /*max-width: 90%; 
+        width: 100%;*/ 
         display: flex;
         justify-content: center;
     }
@@ -1055,6 +1067,7 @@ button#openContactModal:hover {
         align-items: center;
         padding-left: 0; 
         padding-right: 0;
+        padding-top: 7px;
     }
     select {
         width: 80%; 
@@ -1063,3 +1076,8 @@ button#openContactModal:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .filter-bar select  {
+        width: 260px;
+    }
+}

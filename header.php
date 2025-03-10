@@ -8,9 +8,8 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+    <!-- <script src="scripts.js"></script> -->
 
-</script>
     <?php wp_head(); ?>
 
 </head>

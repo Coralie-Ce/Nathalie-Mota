@@ -1,8 +1,9 @@
 <?php
-function nathaliemota_enqueue_styles() {
-    wp_enqueue_style('nathaliemota-style', get_stylesheet_uri());
+
+function theme_enqueue_styles() {
+    wp_enqueue_style('nathaliemota-style', get_stylesheet_directory_uri() . '/style.css', array(), '6.7.2');
 }
-add_action('wp_enqueue_scripts', 'nathaliemota_enqueue_styles');
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 // Menu Principal
 function register_my_menu() {
@@ -135,7 +136,7 @@ add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
 
 // Lightbox 
 
-function enqueue_lightbox_script() {
-    wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_lightbox_script');
+//function enqueue_lightbox_script() {
+    //wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js', array(), null, true);
+//}
+//add_action('wp_enqueue_scripts', 'enqueue_lightbox_script');
