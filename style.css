@@ -588,20 +588,6 @@ button#openContactModal:hover {
     transform: translate(-50%, -50%);
 }
 
-/*.photo-item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.3); 
-    transition: opacity 0.3s ease-in-out;
-}*/
-
 /* Page d'accueil galerie */ 
 
 .photos-filtres-accueil{
@@ -920,8 +906,11 @@ button#openContactModal:hover {
     .footer-menu a {
         margin-bottom: 1vh; 
     }
-    
+    .filter-bar select  {
+            width: 260px !important;
+    }
 }
+
 
 /* Responsive pour les écrans de moins de 768px */
 @media screen and (max-width: 768px) {
@@ -1000,8 +989,38 @@ button#openContactModal:hover {
         display: flex;
         flex-direction: column;
     }
-}
-
+    .photo-grid {
+        flex-direction: column;
+        align-items: center; 
+        display: flex;
+    }
+    .photo-item {
+        /*max-width: 90%; 
+        width: 100%;*/ 
+        display: flex;
+        justify-content: center;
+    }
+    .filter-bar {
+        flex-direction: column; 
+        align-items: stretch; 
+        display: flex;
+        justify-content: center;
+        gap: 10px; 
+    }
+    .filter-left, .filter-right {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        padding-left: 0; 
+        padding-right: 0;
+        padding-top: 7px;
+    }
+    select {
+        width: 80%; 
+        max-width: 300px; 
+        text-align: center; 
+    }
+    }
 
 /* Très petits écrans */
 @media screen and (max-width: 480px) {
@@ -1052,43 +1071,5 @@ button#openContactModal:hover {
     }
 
 }
-@media screen and (max-width: 768px) {
-    .photo-grid {
-        flex-direction: column;
-        align-items: center; 
-        display: flex;
-    }
-    .photo-item {
-        /*max-width: 90%; 
-        width: 100%;*/ 
-        display: flex;
-        justify-content: center;
-    }
-    .filter-bar {
-        flex-direction: column; 
-        align-items: stretch; 
-        display: flex;
-        justify-content: center;
-        gap: 10px; 
-    }
-    .filter-left, 
-    .filter-right {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        padding-left: 0; 
-        padding-right: 0;
-        padding-top: 7px;
-    }
-    select {
-        width: 80%; 
-        max-width: 300px; 
-        text-align: center; 
-    }
-}
 
-@media (max-width: 768px) {
-    .filter-bar select  {
-        width: 260px;
-    }
-}
+
