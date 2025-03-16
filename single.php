@@ -8,18 +8,18 @@ get_header();
 
 <main class="main-content-post">
     <?php
-    if (have_posts()) : // Vérifie s'il y a des articles à afficher.
-        while (have_posts()) : // Tant qu'il y a des articles à afficher, boucle.
-            the_post(); // Charge l'article actuel.
+    if (have_posts()) : 
+        while (have_posts()) : 
+            the_post(); 
     ?>
     <div class="post">
     <h1 class="post-title"><?php the_title(); ?></h1>
         <div>
-            <?php the_content(); // Affiche le contenu de l'article. ?>
+            <?php the_content(); ?>
         </div>
     <?php
         endwhile;
-    endif; // Fin de la vérification de la présence d'articles.
+    endif; 
     ?>
 </main>
 

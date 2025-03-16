@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 // Miniatures dynamiques 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -69,9 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Fonction pour récupérer l'URL de la miniature via un PHP script AJAX ou autre
+// Fonction pour récupérer l'URL de la miniature 
 function getThumbnailUrl(postId) {
-    // Exemple d'appel pour obtenir la miniature via un AJAX ou une variable PHP.
     return '<?php echo get_the_post_thumbnail_url(postId, "thumbnail"); ?>';
 }
 
